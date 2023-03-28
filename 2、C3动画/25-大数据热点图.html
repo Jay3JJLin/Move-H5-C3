@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据热点图</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url(../media/map.png);
+            margin: 0 auto;
+        }
+
+        /* 城市与整张图 子绝父相
+            波纹与城市 子绝父绝    
+        */
+        .city {
+            position: absolute;
+            top: 229px;
+            right: 193px;
+            color: #fff;
+        }
+
+        .tb {
+            /* 不能用bottom 会被覆盖 */
+            top: 500px;
+            right: 80px;
+        }
+
+        .gz {
+            top: 543px;
+            right: 194px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        /* 利用属性选择器 */
+        .city div[class^="pulse"] {
+            position: absolute;
+            /* 保证小波纹 水平垂直居中对齐 放大之后就会中心向四周发散 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 给小波纹宽高 而不是scale */
+            width: 8px;
+            height: 8px;
+            /* 加阴影 */
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            /* 调用动画 */
+            animation: pulse 2s linear 0s infinite;
+        }
+
+        /* 注意权重问题 上面的21 这里的10*/
+        .city div.pulse2 {
+            /* 控制时间差 体现层次感*/
+            animation-delay: 0.4s;
+        }
+
+        .city div.pulse3 {
+            animation-delay: 0.8s;
+        }
+
+        /* 动画 */
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                /* transform:scale(5); 我们不要用scale 因为他会让阴影变大 */
+                width: 40px;
+                height: 40px;
+                /* 透明度 */
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
