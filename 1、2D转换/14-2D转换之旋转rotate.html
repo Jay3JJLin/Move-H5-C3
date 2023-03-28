@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换之旋转rotate</title>
+    <style>
+        img {
+            width: 150px;
+            /* 顺时针旋转45度 */
+            /* transform: rotate(45deg); */
+            /* 变成小圆点 */
+            border-radius: 50%;
+            border: 5px solid pink;
+            /* 过渡写到本身上，谁做动画给谁加 */
+            transition: all 0.3s;
+        }
+
+        img:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引用html外部图片，记得在路径前面加../ -->
+    <img src="../media/pic.jpg" alt="">
+</body>
+
+</html>
+
+<!-- 
+语法
+transform:rotate(度数)
+ -->
+
+<!-- 
+    重点：
+rotate里面跟度数， 单位是 deg 比如 rotate(45deg)
+ 角度为正时，顺时针，负时，为逆时针
+ 默认旋转的中心点是元素的中心点
+  -->

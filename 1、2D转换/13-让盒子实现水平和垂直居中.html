@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>让盒子实现水平和垂直居中</title>
+    <style>
+        div {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* 和相对定位类似，是相对自身元素的50% */
+            /* 1.我们translate里面的参数是可以用% */
+            /* 2.如果里面的参数是 % 移动的距离是盒子自身的宽度或者高度来对比的 */
+            /* 这里的 50% 就是50px 因为盒子宽度是100px */
+            /* transform: translateX(50%); */
+        }
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 往回走自身的一半 */
+            /* margin-top: -100px;
+            margin-left: -100px; */
+            /* 用 translate(-50%,-50%) 避免因宽高的变化导致无法居中*/
+            transform: translate(-50%, -50%);
+        }
+
+        span {
+            /* translate 对行内标签没有效果 */
+            transform: translate(300px, 300px);
+        } 
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+    <span>123</span>
+</body>
+
+</html>
+
+
+<!-- 
+translate中的百分比单位是相对于自身元素的 translate:(50%,50%);
+ 对行内标签没有效果
+ -->
