@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D移动ranslate-3d</title>
+    <style>
+        /* 透视 */
+        /* 透视写到被观察元素的父盒子上面 */
+        body:hover {
+
+            perspective: 200px;
+            
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 必须借助透视 才能看见translateZ */
+            /* transform: translateX(100px) translateY(100px) translateZ(100px); */
+
+            /* 1.translateZ 沿着Z轴移动 */
+            /* 2.translateZ 后面的单位我们一般跟px */
+            /* 3.translateZ(100px) 向外移动100px 外正内负*/
+            /* 4.3D移动有简写的方法 */
+            /* transform: translate3d(x,y,z); */
+            /* transform: translate3d(100px, 100px, 100px); */
+
+            /* 5.xyz是不能省略的如果没有就写0 */
+            transform: translate3d(400px, 100px,100px);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+
+<!-- 
+x轴：水平向右 注意： x 右边是正值，左边是负值
+y轴：垂直向下 注意： y 下面是正值，上面是负值
+z轴：垂直屏幕 注意： 往外面是正值，往里面是负值
+ -->
+
+
+<!-- 
+透视 perspective 近大远小
+透视的单位是像素
+透视写在被观察元素的父盒子上面的
+d：就是视距，视距就是一个距离人的眼睛到屏幕的距离。
+z：就是 z轴，物体距离屏幕的距离，z轴越大（正值） 我们看到的物体就越大。
+ -->
