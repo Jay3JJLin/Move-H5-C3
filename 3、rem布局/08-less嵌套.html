@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>less嵌套</title>
+    <link rel="stylesheet" href="nest.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#">文字</a>
+    </div>
+    <div class="nav">
+        <div class="logo">传智播客</div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+Less 嵌套写法
+#header {
+ .logo {
+ width: 300px;
+ }
+}
+
+如果遇见 （交集|伪类|伪元素选择器）
+内层选择器的前面没有 & 符号，则它被解析为父选择器的后代；
+如果有 & 符号，它就被解析为父元素自身或父元素的伪类。
+a{
+ &:hover{
+ color:red;
+ }
+}
+ -->

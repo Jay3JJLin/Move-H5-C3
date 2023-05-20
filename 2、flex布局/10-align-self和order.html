@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-self和order</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 300px;
+            background-color: pink;
+            /* align-items: flex-end; */
+            /* 只让3号盒子下来 */
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            margin-right: 5px;
+        }
+
+        div span:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        div span:nth-child(2) {
+            /* 默认是0 -1比0小 所以排在前面 */
+            order: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。
+默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch
+
+span:nth-child(2) {
+ /* 设置自己在侧轴上的排列方式 */
+ align-self: flex-end;
+ }
+
+order 属性定义项目的排列顺序
+数值越小，排列越靠前，默认为0。
+注意：和 z-index 不一样。
+ -->

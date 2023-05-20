@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C3盒子模型</title>
+    <style>
+        div:nth-child(1) {
+            /* 传统盒子模型：width + border + padding */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid red;
+        }
+
+        div:nth-child(2) {
+            /* 这句话让盒子变成CSS3盒子模型 */
+            /* padding 和 border 不会再撑大盒子了 */
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            padding: 10px;
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
+
+<!-- 
+ 传统模式宽度计算：盒子的宽度 = CSS中设置的width + border + padding 
+ CSS3盒子模型： 盒子的宽度 = CSS中设置的宽度width 里面包含了 border 和 padding 
+也就是说，我们的CSS3中的盒子模型， padding 和 border 不会撑大盒子了
+ -->
+
+<!-- 
+/*CSS3盒子模型*/
+ box-sizing: border-box;
+ /*传统盒子模型*/
+ box-sizing: content-box;
+-->
+
+<!-- 
+ 移动端可以全部CSS3 盒子模型
+ PC端如果完全需要兼容，我们就用传统模式，如果不考虑兼容性，我们就选择 CSS3 盒子模型
+-->

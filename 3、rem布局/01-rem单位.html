@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem单位</title>
+    <style>
+        html {
+            font-size: 12px;
+        }
+
+        div {
+            font-size: 12px;
+            width: 15rem;
+            height: 15rem;
+            background-color: skyblue;
+        }
+
+        p {
+            /* 1.em 相对于父元素 的字体大小 的字体大小来说的 */
+            width: 10em;
+            height: 10em;
+            /* 此时是 120 * 120 的盒子 */
+
+            /* 2.rem 相对于html元素 字体大小来说的 */
+            /* 此时是 140 * 140 的盒子*/
+            width: 10rem;
+            height: 10rem;
+            background-color: pink;
+            /* 3.rem 的优点就是可以通过修改html里面的文字大小 来改变页面中元素的大小 可以整体控制 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+rem 单位
+rem (root em)是一个相对单位，类似于em，em是父元素字体大小。
+不同的是rem的基准是相对于html元素的字体大小。
+比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。
+
+rem的优势：父元素文字大小可能不一致， 但是整个页面只有一个html，可以很好来控制整个页面的元素大小
+ -->

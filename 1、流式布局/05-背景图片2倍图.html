@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图片2倍图</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            background: url(images/apple100.jpg) no-repeat;
+            /* 压缩成1/2 到iPhone8 (开发像素：375 * 667 物理像素：750 * 1334 物理像素比 1:2 )手机上会放大2倍 正好还原  */
+            background-size: 50px 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+
+<!-- 
+多倍图切图 cutterman
+ @3X 3倍图
+ @2X 2倍图
+ @1X 1倍图原图
+ -->

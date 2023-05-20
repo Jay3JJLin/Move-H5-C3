@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二倍图做法</title>
+    <style>
+        /* 需要一张50*50 px (CSS像素) 的图片 直接放到我们iPhone8 会放大2倍 100*100 就会模糊*/
+        /* 策略：采取 放一个100 * 100 的图片 然后手动把这个图片 缩小为 50 * 50 (CSS像素) */
+        /* 准备的图片 比实际需要的大小 大2倍，这种方式就是 2倍图 */
+
+        /* 先放一个放大相应倍数的图片 ，再用盒子压缩对应倍数，到移动端时，再通过物理像素放大该倍数，实际效果就还原了清晰度，不会出现模糊 */
+        img:nth-child(2) {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 模糊的 -->
+    <img src="images/apple50(1).jpg" alt="">
+    <!-- 我们采取2倍图 -->
+    <img src="images/apple100.jpg" alt="">
+</body>
+
+</html>

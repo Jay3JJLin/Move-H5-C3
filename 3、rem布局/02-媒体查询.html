@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询</title>
+    <style>
+        /* 媒体查询可以根据不同的屏幕尺寸再改变不同的样式 */
+        /* 这句话的意思就是：在屏幕上 并且 最大的宽度是 800px  设置我们想要的样式*/
+        /* max-width  小于等于800px*/
+        @media screen and (max-width:800px) {
+            body {
+                background-color: pink;
+            }
+        }
+
+        /* 本质上就是编程语言里面的条件语句，达到某个条件就执行相关语句 */
+        @media screen and (max-width: 500px) {
+            body {
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!-- 
+媒体查询（Media Query）是CSS3新语法。
+ 使用 @media 查询，可以针对不同的媒体类型定义不同的样式
+ @media 可以针对不同的屏幕尺寸设置不同的样式
+ 当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面
+
+语法规范：
+@media mediatype and|not|only (media feature) {
+ CSS-Code;
+}
+ 用 @media 开头 注意@符号
+ mediatype 媒体类型
+ 关键字 and not only
+ media feature 媒体特性 必须有小括号包含
+
+1. mediatype 查询类型
+值 解释说明
+all 用于所有设备
+print 用于打印机和打印预览
+scree 用于电脑屏幕，平板电脑，智能手机等
+
+2. 关键字
+关键字将媒体类型或多个媒体特性连接到一起做为媒体查询的条件
+ and：可以将多个媒体特性连接到一起，相当于“且”的意思。
+ not：排除某个媒体类型，相当于“非”的意思，可以省略。
+ only：指定某个特定的媒体类型，可以省略。
+
+3. 媒体特性
+每种媒体类型都具体各自不同的特性，根据不同媒体类型的媒体特性设置不同的展示风格。我们暂且了解三个。
+注意他们要加小括号包含
+值 解释说明
+width 定义输出设备中页面可见区域的宽度
+min-width 定义输出设备中页面最小可见区域宽度 >=某宽度 就显示
+max-width 定义输出设备中页面最大可见区域宽度 <=某宽度 就显示 
+ -->
