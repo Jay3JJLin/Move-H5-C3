@@ -1,0 +1,193 @@
+// 导入base.less
+@import url(base.less);
+// =============== 布局样式  ================
+// 约定 iphone6 375px 为基准设备   1vmin = 3.75px
+
+// 声明基准值变量
+@baseSize:3.75vmin;
+// 头部模块
+.suspension {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // 当元素之间重叠的时候，z-index 较大的元素会覆盖较小的元素在上层进行显示。默认时0
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 0.53333vmin 2.66667vmin rgb(0 0 0 / 20%);
+  .m-navbar {
+    padding: 0 (12 / @baseSize) 0 (18 / @baseSize);
+    display: flex;
+    //主轴x 两端对齐
+    justify-content: space-between;
+    height: (44 / @baseSize);
+    // 垂直居中 侧轴
+    align-items: center;
+
+    // 左侧
+    .logo {
+      i {
+        font-size: (28 / @baseSize);
+        color: #fb7299;
+      }
+    }
+
+    // 右侧
+    .right {
+      display: flex;
+      .search {
+        color: #ccc;
+        i {
+          font-size: (22 / @baseSize);
+        }
+      }
+      .face {
+        // 盒子给大小，图片100%即可，不要给图片大小
+        overflow: hidden;
+        width: (24 / @baseSize);
+        height: (24 / @baseSize);
+        border-radius: 50%;
+        margin: 0 (20 / @baseSize);
+      }
+      .app-btn {
+        width: (72 / @baseSize);
+        height: (24 / @baseSize);
+      }
+    }
+  }
+
+  // 频道模块
+  .channel-menu {
+    position: relative;
+    display: flex;
+    // 两端对齐和垂直居中
+    justify-content: space-between;
+    align-items: center;
+    height: (40 / @baseSize);
+    border: 1px solid #e7e7e7;
+
+    // 左侧 tabs
+    .tabs {
+      overflow: hidden;
+      flex: 1;
+      .tabs-list {
+        //display: flex 让里面的孩子不会换行
+        display: flex; 
+        a {
+          // padding 会使点击范围增大 而margin不会
+          padding: 0 (16 / @baseSize);
+          // 我们不需要文字换行
+          white-space: nowrap;
+          font-size: (14 / @baseSize);
+          height: (40 / @baseSize);
+          line-height: (40 / @baseSize);
+        }
+
+        .line {
+          position: absolute;
+          left: (16 / @baseSize);
+          bottom: 0;
+
+          width: (28 / @baseSize);
+          height: (2 / @baseSize);
+          background-color: #fb7299;
+        }
+      }
+    }
+ 
+    // 右侧 after
+    .after {
+      position: relative;
+      width: (40 / @baseSize);
+      // 为了不影响下面的红线盒子 所以留出1px的距离
+      height: (39 / @baseSize);
+      text-align: center;
+      line-height: (39 / @baseSize);
+      background-color: #fff;
+      color: #ccc;
+      i {
+        font-size: (20 / @baseSize);
+      }
+    }
+
+    
+  }
+}
+
+// 主体部分
+.m-home {
+  padding: (85 / @baseSize) (5 / @baseSize) 0;
+  .video-list {
+    display: flex;
+    // 让弹性盒子强制换行
+    flex-wrap: wrap;
+    .video-item {
+      width: 50%;
+      // height: (150 / @baseSize);
+      // 让每个链接中间有小缝隙，不能用margin
+      padding: (8 / @baseSize) (5 / @baseSize);
+
+      // 上小半 card
+      .card {
+        position: relative;
+        height: (97 / @baseSize);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .count {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%; //和父盒子一样宽
+          height: (27 / @baseSize);
+          padding: 0 (5 / @baseSize);
+          display: flex; //孩子一行显示
+          justify-content: space-between; //两端对齐
+          align-items: center;//垂直居中
+          font-size: (12 / @baseSize);
+          color: #fff;
+          // 渐变色 180deg从上到下
+          background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.5));
+        }
+      }
+
+      // 小下半 title
+      .title {
+        margin-top: (5 / @baseSize);
+        font-size: (12 / @baseSize);
+
+      }
+    }
+  }
+}
+
+// 底部模块
+.app {
+  position: fixed;//固定定位盒子可以不需要父盒子
+  left: 0;
+  bottom: (30 / @baseSize);
+  width: 100%;
+  height: (38 / @baseSize);
+  // background-color: pink;
+  .btn-app {
+    margin: 0 (20 / @baseSize);
+    height: (38 / @baseSize);
+    border-radius: (19 / @baseSize);
+    // border-radius: 50%; //错误的
+    text-align: center;
+    font-size: (12 / @baseSize);
+    line-height: (38 / @baseSize);
+    background-color: #fb7299;
+    color: #fff;
+    //阴影
+    box-shadow: 0 0.53333vmin 2.66667vmin rgb(0 0 0 / 20%);
+    i {
+      padding: 0 (10 / @baseSize);
+    }
+  }
+}
+
+// vmin可以照顾手机端横屏和竖屏的显示效果
+// vw和vh与视口的高度和宽度有关 1vw就是视口宽度的 1%
+// vmin和vmax 是与当下屏幕的宽度和高度的最大值或最小值有关的 取决于哪个更大和更小
