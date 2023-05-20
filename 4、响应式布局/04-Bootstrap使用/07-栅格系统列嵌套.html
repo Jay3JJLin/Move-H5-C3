@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>栅格系统列嵌套</title>
+    <style>
+        .row>div {
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- 我们列嵌套 最好再加一个行row，这样可以取消父元素的padding值，而且高度自动和父级一样高 -->
+                <div class="row">
+                    <div class="col-md-6">a</div>
+                    <div class="col-md-6">b</div>
+                </div>
+            </div>
+            <div class="col-md-4">2</div>
+            <div class="col-md-4">3</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+列嵌套 
+栅格系统内置的栅格系统将内容再次嵌套。简单理解就是一个列内再分成若干份小列。
+我们可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-* 元素内
+ <div class="col-sm-4">
+    <div class="row">
+    <div class="col-sm-6">小列</div>
+    <div class="col-sm-6">小列</div>
+    </div>
+</div>
+
+ -->

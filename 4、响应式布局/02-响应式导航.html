@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            /* 去除小黑点 */
+            list-style: none;
+        }
+
+        .container {
+            width: 750px;
+            /* 水平居中 */
+            margin: 0 auto;
+        }
+
+        .container ul li {
+            float: left;
+            width: 93.75px;
+            height: 30px;
+            background-color: green;
+        }
+
+        @media screen and (max-width:767px) {
+            .container {
+                width: 100%;
+            }
+            .container ul li {
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+案例：需求分析
+① 当我们屏幕大于等于768像素，我们给布局容器container宽度为750px
+② container里面包含8个小li 盒子，每个盒子的宽度定为 93.75px（750/8）， 高度为 30px，浮动一行显示。
+③ 当我们屏幕缩放，宽度小于768像素的时候， container盒子宽度修改为 100% 宽度。
+④ container里面的8个小li，宽度修改为 33.33%，这样一行就只能显示3个小li ，剩余下行显示
+ -->

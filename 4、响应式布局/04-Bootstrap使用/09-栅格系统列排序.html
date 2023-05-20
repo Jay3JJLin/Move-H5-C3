@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 一定不要忘记引入 bootstrap 的样式文件 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>栅格系统列排序</title>
+    <style>
+        .row div {
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">左侧</div>
+            <div class="col-md-8 col-md-pull-4">右侧</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+列排序
+通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序,分别代表 推 拉
+
+推 往后移(右)
+拉 往前移(左)
+
+Boostrap4 中已废弃此用法 改为order-(权重)
+排序默认0 order越高越靠后，还有两个特别的类first和last
+ -->
